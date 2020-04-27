@@ -72,9 +72,10 @@ function compute (){
         console.log(answerHTMLString)
         if (answerHTMLString.includes("+")){
             const answerArray = answerHTMLString.split("+")
-            const xValue = parseInt(answerArray[0])
-            const yValue = parseInt(answerArray[1])
-            const sum = add(xValue, yValue)
+            let sum = 0;
+            for (let i = 0; i < answerArray.length; i++){
+                sum += parseInt(answerArray[i])
+            }
             document.querySelector("#answer").innerHTML += ` = ${sum}`;
         }
         else if (answerHTMLString.includes("-")){
